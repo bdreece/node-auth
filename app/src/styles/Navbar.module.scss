@@ -1,0 +1,9 @@
+@use 'helpers/flex';
+
+.navbar {
+  @include flex.container($justify: space-between);
+}
+
+.spacer {
+  flex: 1;
+}
