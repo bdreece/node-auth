@@ -2,8 +2,6 @@ import type {Handler} from '../types';
 import z from 'zod';
 import db from '../db';
 import {hashPassword} from '../password';
-import {createAccessToken, createRefreshToken} from '../token';
-
 
 const schema = z.object({
     firstName: z.string(),
