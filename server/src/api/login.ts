@@ -50,7 +50,10 @@ const login: Handler<Response> = async (req, res) => {
 
   return res
     .status(200)
-    .setHeader('Set-Cookie', `RefreshToken=${refreshToken}; Path=/; HttpOnly`)
+    .setHeader(
+      'Set-Cookie',
+      `RefreshToken=${refreshToken}; Path=/; HttpOnly; SameSite=Strict`,
+    )
     .json({
       success: true,
       data: {
