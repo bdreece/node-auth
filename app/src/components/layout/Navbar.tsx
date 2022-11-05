@@ -1,15 +1,15 @@
 import type { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { useSelf } from 'components/providers/SelfProvider';
+import { useSelf } from '../providers/SelfProvider';
 
-import styles from 'styles/Navbar.module.scss';
+import styles from '../../styles/Navbar.module.scss';
 
 const Navbar: FC = () => {
   const user = useSelf();
 
   return (
     <nav className={styles.navbar}>
-      <h1>App</h1>
+      <Link to='/'>App</Link>
       <div className={styles.spacer} />
       {user ? (
         <>

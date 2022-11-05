@@ -18,7 +18,12 @@ export type SelfProviderProps = {
 };
 
 const self = async (accessToken: string) => {
-  const res = await fetch('http://localhost:8080/api/self');
+  const res = await fetch('http://localhost:8080/api/self', {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+    credentials: 'include',
+  });
   const result: Response<SelfContext, any> = await res.json();
   if (!result.success) throw result.error;
   return result.data;

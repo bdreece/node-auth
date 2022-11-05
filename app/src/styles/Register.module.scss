@@ -1,0 +1,8 @@
+@use 'helpers/flex';
+
+.form {
+  @include flex.container($direction: column);
+  gap: 0.5rem;
+  max-width: 80vw;
+  margin-inline: auto;
+}

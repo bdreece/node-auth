@@ -10,7 +10,9 @@ export type AccessContext = {
 const context = createContext<AccessContext>({});
 
 const refresh = async () => {
-  const res = await fetch('http://localhost:8080/api/auth/refresh');
+  const res = await fetch('http://localhost:8080/api/auth/refresh', {
+    credentials: 'include',
+  });
   const result: Response<AccessContext, any> = await res.json();
   if (!result.success) throw result.error;
   return result.data;
